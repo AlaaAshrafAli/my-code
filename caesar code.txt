@@ -1,0 +1,17 @@
+def caesar_encryption(plaintext,key):
+  encryption_str = ''
+  for x in plaintext:
+    if x.isupper():
+      temp = 65 + ((ord(x) - 65 + key) % 26) 
+      encryption_str = encryption_str + chr(temp)                              
+    elif x.islower():
+      temp = 97 + ((ord(x) - 97 + key) % 26)
+      encryption_str = encryption_str + chr(temp)
+    else:
+      encryption_str = encryption_str + x  
+ 
+  print("The ciphertext=",encryption_str)
+ 
+plaintext = input("Enter the plaintext=")
+key = int(input("Enter the key="))
+caesar_encryption(plaintext,key) 
